@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+   id_app: 1
+  color: 1
+  background: MyString
+  back_design: false
+  icon: MyString
+  icon_design: 
+  splash: MyString
+  splash_design: 
+  status: 1
+  price: 1
+  id_user: MyString
+  : MyString
+
+two:
+   id_app: 1
+  color: 1
+  background: MyString
+  back_design: false
+  icon: MyString
+  icon_design: 
+  splash: MyString
+  splash_design: 
+  status: 1
+  price: 1
+  id_user: MyString
+  : MyString

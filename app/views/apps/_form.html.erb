@@ -1,0 +1,65 @@
+<%= form_for(@app) do |f| %>
+  <% if @app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
+
+      <ul>
+      <% @app.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label : id_app %><br />
+    <%= f.number_field : id_app %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.number_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :background %><br />
+    <%= f.text_field :background %>
+  </div>
+  <div class="field">
+    <%= f.label :back_design %><br />
+    <%= f.check_box :back_design %>
+  </div>
+  <div class="field">
+    <%= f.label :icon %><br />
+    <%= f.text_field :icon %>
+  </div>
+  <div class="field">
+    <%= f.label :icon_design %><br />
+    <%= f.text_field :icon_design %>
+  </div>
+  <div class="field">
+    <%= f.label :splash %><br />
+    <%= f.text_field :splash %>
+  </div>
+  <div class="field">
+    <%= f.label :splash_design %><br />
+    <%= f.text_field :splash_design %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :id_user %><br />
+    <%= f.text_field :id_user %>
+  </div>
+  <div class="field">
+    <%= f.label : %><br />
+    <%= f.text_field : %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

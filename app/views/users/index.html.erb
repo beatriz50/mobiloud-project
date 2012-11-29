@@ -1,0 +1,31 @@
+<%= form_for(User.new, :url => {:action => "create", :controller => "users"}) do |f| %> 
+
+<p>
+<%= f.label :name_company %>
+<%= f.text_field :name_company, :placeholder => 'Name of the company' %>
+</p>
+<p>
+<%= f.label :email %>
+<%= f.text_field :email, :placeholder => 'Contact Email' %> 
+</p>
+<p>
+<%= f.label :pass %>
+<%= f.password_field :pass, :placeholder => 'Password' %> 
+</p>
+<p>
+<%= f.label :url %>
+<%= f.text_field :url, :placeholder => 'URL of the company' %> 
+</p>
+<p>
+<%= f.label :phone %>
+<%= f.text_field :phone, :placeholder => 'URL of the company' %> 
+</p>
+<p>
+<%= f.label :address %>
+<%= f.text_field :address, :placeholder => 'URL of the company' %> 
+</p>
+<p>
+<%= f.submit "Register" %>
+</p>
+
+<% end %>
