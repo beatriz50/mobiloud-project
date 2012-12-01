@@ -2,20 +2,23 @@ class User < ActiveRecord::Base
   attr_accessible :address, :email, :name_company, :phone, :url
 
   validates :url, :presence => true, :unique => true
-  validates :email, :presence => true, :unique => true
-  validates :name_company, :presence => true, :unique => true
+
+  #the messages must be inside validates method
+  validates :email, :presence => true, :uniqueness => true, :message => "is already used by another user"
+
+  #why the name of the company is unique? There could be companies with the same name! 
+  validates :name_company, :presence => true
+
+  #look better the migration file! There is something wrong
   validates :phone, :presence => true
+
   validates :address, :presence => true
   validates :password_hash, :presence => true
 
-  	#Email validation
-	def validate_unique_email
-		if User.find_by_email(self.email)
-			errors.add(:email, "is already used by another Company.")
-		end
-	end
-  	
-  	#Company validation
+
+	#### why these methods? only for the message?
+
+ 	#Company validation
 	def validate_unique_url
 		if User.find_by_url(self.url)
 			errors.add(:url, "is already registered.")

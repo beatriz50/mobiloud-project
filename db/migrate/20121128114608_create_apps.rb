@@ -24,6 +24,9 @@ class CreateApps < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :apps, :user_id, :app_name
+    add_index :apps, :user_id
+    add_index :apps, :app_name
+    add_index :apps, :status
+    
   end
 end

@@ -7,7 +7,10 @@ class CreateUsers < ActiveRecord::Migration
 
       t.string :name_company
       t.string :url
+
+      #this not be good, why?
       t.integer :phone
+
       t.string :address
 
       t.timestamps
