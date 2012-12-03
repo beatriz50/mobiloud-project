@@ -40,17 +40,17 @@ class AppsController < ApplicationController
   # POST /apps
   # POST /apps.json
   def create
-    @app = App.new(params[:app])
+    @app = User.new
 
-    respond_to do |format|
-      if @app.save
-        format.html { redirect_to @app, notice: 'App was successfully created.' }
-        format.json { render json: @app, status: :created, location: @app }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @app.errors, status: :unprocessable_entity }
-      end
-    end
+    @app.name_company = params[:name_company]
+    @app.email = params[:email]
+    @app.url = params[:url]
+    @app.phone = params[:phone]
+    @app.address = params[:address]
+
+    # verify email format
+
+    # salt password
   end
 
   # PUT /apps/1

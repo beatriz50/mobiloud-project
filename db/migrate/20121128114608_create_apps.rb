@@ -7,13 +7,13 @@ class CreateApps < ActiveRecord::Migration
       t.string :color
      
       t.string :background
-      t.bool :back_design
+      t.boolean :back_design
 
       t.string :icon
-      t.bool :icon_design
+      t.boolean :icon_design
 
       t.string :splash
-      t.bool :splash_design
+      t.boolean :splash_design
 
       t.float :price
 
@@ -24,6 +24,8 @@ class CreateApps < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :apps, :user_id, :app_name
+    add_index :apps, :user_id
+    add_index :apps, :app_name
+    add_index :apps, :status
   end
 end

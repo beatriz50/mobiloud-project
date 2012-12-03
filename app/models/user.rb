@@ -1,31 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessible :address, :email, :name_company, :phone, :url
+  attr_accessible :email, :name_company, :phone, :url, :address
 
-  validates :url, :presence => true, :unique => true
-  validates :email, :presence => true, :unique => true
-  validates :name_company, :presence => true, :unique => true
-  validates :phone, :presence => true
-  validates :address, :presence => true
-  validates :password_hash, :presence => true
+  validates :url, :presence => true, :uniqueness => {:message => "This url is already used by another company"}
+  validates :email, :presence => true, :uniqueness => {:message => "There is user with that email"}
+  validates :name_company, :presence => {:message => "must be present"}
+  validates :phone, :presence => {:message => "must be present"}
+  validates :address, :presence => {:message => "must be present"}
 
-  	#Email validation
-	def validate_unique_email
-		if User.find_by_email(self.email)
-			errors.add(:email, "is already used by another Company.")
-		end
-	end
-  	
-  	#Company validation
-	def validate_unique_url
-		if User.find_by_url(self.url)
-			errors.add(:url, "is already registered.")
-		end
-	end
-
-	#URL validation
-	def validate_unique_name_company
-		if User.find_by_name_company(self.name_company)
-			errors.add(:name_company, "is already used by another Company.")
-		end
-	end
 end

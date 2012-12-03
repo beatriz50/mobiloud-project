@@ -1,8 +1,6 @@
 Mobiloud::Application.routes.draw do
   resources :apps
 
-  get "users/index"
-  
   resources :users
   
   root to: 'users#index', as: 'users'
