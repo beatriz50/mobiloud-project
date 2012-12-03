@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   validates :phone, :presence => {:message => "must be present"}
   validates :address, :presence => {:message => "must be present"}
 
+
 end

@@ -7,7 +7,9 @@ class CreateUsers < ActiveRecord::Migration
 
       t.string :name_company
       t.string :url
-      t.str :phone
+
+      t.string :phone
+
       t.string :address
 
       t.timestamps
